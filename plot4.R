@@ -23,7 +23,7 @@ Data[,5]<-as.numeric(Data[,5]) #convert voltage to numeric
 Data[,4]<-as.numeric(Data[,4]) #convert Global_reactive_power to numeric
 
 #Set the layout for four graphs and set margins
-par(mfcol=c(2,2),mar=c(2,4,2,2),bg=NA)
+par(mfcol=c(2,2),mar=c(4,4,2,2),bg=NA)
 #topleft plot (same as plot two)
 plot(Data[,3],type='l',xaxt='n',ylab="Global Active Power (kilowatts)",xlab="",cex.lab=.75) #line plot 
 axis(1,at=1,c("Thu")) #x axis
@@ -36,14 +36,14 @@ lines(Data[,9],typ='l',col=4) #adding in sub_metering_3 color= blue
 axis(1,at=1,c("Thu")) #x axis 
 axis(1,at=2880/2,c("Fri")) #x axis
 axis(1,at=2880,c("Sat")) #x axis
-legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c(1,2,4),lty=c(1,1,1), cex=.5) #setting legend with colors and lines also adjusting size
+legend("topright",legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"),col=c(1,2,4),lty=c(1,1,1), cex=.5,bty="n") #setting legend with colors and lines also adjusting size
 #topright plot
-plot(Data[,5],type='l',xaxt='n',ylab="Voltage",xlab="",col=1,cex.lab=.75)
+plot(Data[,5],type='l',xaxt='n',ylab="Voltage",xlab="datetime",col=1,cex.lab=.75)
 axis(1,at=1,c("Thu")) #x axis 
 axis(1,at=2880/2,c("Fri")) #x axis
 axis(1,at=2880,c("Sat")) #x axis
 #bottomright plot
-plot(Data[,4],type='l',xaxt='n',ylab="Global_reactive_power",xlab="",ylim=c(0.0,0.5),col=1,cex.lab=.75)
+plot(Data[,4],type='l',xaxt='n',ylab="Global_reactive_power",xlab="datetime",ylim=c(0.0,0.5),col=1,cex.lab=.75)
 axis(1,at=1,c("Thu")) #x axis 
 axis(1,at=2880/2,c("Fri")) #x axis
 axis(1,at=2880,c("Sat")) #x axis
